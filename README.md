@@ -26,8 +26,8 @@ Linux: use your distribution’s package manager
 
 In the terminal:
 
-git clone https://github.com/YOUR_USER/YOUR_REPOSITORY.git
-cd YOUR_REPOSITORY
+git clone <repository_url>
+cd <local_repository>
 
 Expected structure (example):
 
