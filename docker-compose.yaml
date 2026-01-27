@@ -1,0 +1,25 @@
+services:
+  dashboard:
+    build: .
+    container_name: financial-dashboard
+    ports:
+      - "8050:8050"
+    environment:
+      - OLLAMA_URL=http://ollama:11434
+      - OLLAMA_MODEL=llama3.2:3b
+    depends_on:
+      - ollama
+    volumes:
+      # opcional: persistir seus CSVs/bancos fora do container
+      - ./data:/app/data
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama
+    ports:
+      - "11434:11434"   # opcional (útil para testar do host)
+    volumes:
+      - ollama:/root/.ollama
+
+volumes:
+  ollama:
