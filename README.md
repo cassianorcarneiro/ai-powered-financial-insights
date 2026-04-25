@@ -1,6 +1,8 @@
 # 💰 AI Powered Financial Dashboard
 
-A Python-based personal finance dashboard that turns CSV-stored transactions into interactive charts, financial indicators, and AI-driven written insights — all running locally via Docker, with **no data sent to the cloud**.
+> Personal finance dashboard with local AI insights — your data never leaves your machine.
+
+A Python-based personal finance dashboard that turns CSV-stored transactions into interactive charts, financial indicators, and AI-driven written insights. Everything runs locally via Docker, with **no data sent to the cloud**.
 
 <p align="center">
   <img alt="Stack" src="https://img.shields.io/badge/Stack-Dash%20%2B%20Plotly%20%2B%20Ollama-blue?style=for-the-badge">
@@ -10,7 +12,7 @@ A Python-based personal finance dashboard that turns CSV-stored transactions int
 
 ---
 
-## ✨ Features
+## 📦 Features
 
 - 📊 **Interactive charts** — spending by category, payment method, monthly trends, installments starting/finishing
 - 🤖 **AI insights** — a local LLM (via [Ollama](https://ollama.com)) reads aggregated metrics and produces a short financial commentary
@@ -57,8 +59,8 @@ Two containers, one Docker network. The dashboard talks to Ollama at `http://oll
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/cassianorcarneiro/<repo-name>.git
-cd <repo-name>
+git clone https://github.com/cassianorcarneiro/ai-powered-financial-dashboard.git
+cd ai-powered-financial-dashboard
 ```
 
 ### 2. Prepare your data folder
@@ -76,7 +78,7 @@ cd <repo-name>
 └── data/
     ├── data.csv
     ├── categories.csv
-    └── payment_methods.csv
+    └── payments_methods.csv
 ```
 
 The three CSV files inside `data/` **must exist**, even if empty. The app reads them at startup. Minimal headers expected:
@@ -85,7 +87,7 @@ The three CSV files inside `data/` **must exist**, even if empty. The app reads 
 |------|------------------|
 | `data.csv` | `Transaction Date;Payment Date;Label;Category;Amount;Installment;Payment Method;Hash;Record Timestamp;Ignore Entry` |
 | `categories.csv` | `Name` |
-| `payment_methods.csv` | `Name;Close Date;Payment Date;Type` |
+| `payments_methods.csv` | `Name;Close Date;Payment Date;Type` |
 
 > Use `;` as separator and UTF-8-with-BOM encoding (Excel-friendly).
 
@@ -209,7 +211,7 @@ docker exec -it ollama ollama list
 
 ---
 
-## 🧯 Troubleshooting
+## 🔧 Troubleshooting
 
 **🔴 "ReadTimeout" or "Cannot connect to Ollama"**
 
@@ -269,7 +271,7 @@ The file is read on each callback, but the date filter may be excluding new rows
 └── data/                   # ← your CSVs live here (bind-mounted into the container)
     ├── data.csv
     ├── categories.csv
-    └── payment_methods.csv
+    └── payments_methods.csv
 ```
 
 ---
@@ -297,8 +299,21 @@ After the initial setup, you can disconnect from the internet and the dashboard 
 - [ ] Mobile-friendly layout
 
 ---
-### 📝 AI Assistance Disclosure
+
+## 📜 License
+
+MIT — see `LICENSE` file.
+
+## 👤 Author
+
+**Cassiano Ribeiro Carneiro** — [@cassianorcarneiro](https://github.com/cassianorcarneiro)
+
+---
+
+### 🤖 AI Assistance Disclosure
+
 The codebase architecture, organizational structure, and stylistic formatting of this repository were refactored and optimized leveraging [Claude](https://www.anthropic.com/claude) by Anthropic. All core business logic and intellectual property remain the work of the repository authors and are governed by the project's license.
 
 ---
+
 > *Built for people who want financial insights without trusting their bank statements to a third-party API.*
