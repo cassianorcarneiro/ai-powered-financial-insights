@@ -1,7 +1,7 @@
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # AI POWERED FINANCIAL DASHBOARD
+# REPOSITORY: https://github.com/cassianorcarneiro/ai-powered-financial-dashboard
 # CASSIANO RIBEIRO CARNEIRO
-# V2
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 """Static configuration for the AI Powered Financial Dashboard.
